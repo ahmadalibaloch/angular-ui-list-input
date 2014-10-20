@@ -451,9 +451,11 @@ angular.module('ui.listInput', [])
 				transcludedInput.eq(transcludedInput.length - 1).attr('ng-blur', 'updateItems()');
 			}
 			else {
-				// The transcluded content did not have an input, so create one.
+				// The transcluded content did not have an input, so create.
+				// add a placeholder
+				var placholdercontent = 'placeholder="'+attributes.placeholder+'"'
 				if (transcludedInput.length === 0) {
-					transcludedInput = angular.element('<input name="listItem" type="text" class="form-control" />');
+					transcludedInput = angular.element('<input name="listItem" type="text" class="form-control" '+placholdercontent+' />');
 				}
 
 				// Enforce a name for validation
